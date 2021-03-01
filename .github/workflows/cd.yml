@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 12.x
       - name: Cache Node.js modules
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: |
             node_modules
@@ -41,14 +41,14 @@ jobs:
         with:
           node-version: 12.x
       - name: Restore Node.js modules
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: |
             node_modules
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - name: Cache packages
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: |
             packages/components/dist
@@ -66,7 +66,7 @@ jobs:
         with:
           directory: ./packages/components/coverage/
       - name: Cahce website
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: |
             packages/website/dist
@@ -79,7 +79,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Restore website
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: |
             packages/website/dist
@@ -109,7 +109,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Restore website
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: |
             packages/website/dist
